@@ -1,0 +1,27 @@
+class Solution {
+public:
+    vector<int> sortArrayByParityII(vector<int>& nums) {
+        int i=0;
+        int j=0;
+        vector<int>ans(nums.size(),0);
+        while(i<nums.size() && j<nums.size()){
+            if(nums[i] % 2 ==0){
+                ans[j] = nums[i];
+                j=j+2;
+            }
+            i++;
+        }
+
+        i=0;
+        j=1;
+        while(i<nums.size() && j<nums.size()){
+            if(nums[i] % 2 !=0){
+                ans[j] = nums[i];
+                j=j+2;
+            }
+            i++;
+        }
+
+        return ans;
+    }
+};
