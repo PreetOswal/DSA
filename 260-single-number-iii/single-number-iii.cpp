@@ -1,19 +1,22 @@
 class Solution {
 public:
     vector<int> singleNumber(vector<int>& nums) {
-        unordered_map<int,int>m;
-        for(int i=0 ;i<nums.size(); i++){
-            m[nums[i]]++;
+        long long xorAll = 0;
+        for(int i=0; i<nums.size(); i++){
+            xorAll = xorAll ^ nums[i];
         }
 
-        nums.clear();
-
-        for(auto &it : m){
-            if(it.second == 1){
-                nums.push_back(it.first);
+        long long bit = xorAll & (-xorAll);
+        int firstNum=0;
+        int secondNum=0;
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] & bit){
+                firstNum = firstNum ^ nums[i]; 
+            }else{
+                secondNum = secondNum ^ nums[i];
             }
         }
 
-        return nums;
+        return {firstNum, secondNum};
     }
 };
