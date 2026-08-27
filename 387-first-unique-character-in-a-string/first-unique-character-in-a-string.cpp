@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int firstUniqChar(string s) {
+    int firstUniqChar(string s) {//O(n) time and O(1) space
         int freq[26]{};
 
         for(char c :s){
