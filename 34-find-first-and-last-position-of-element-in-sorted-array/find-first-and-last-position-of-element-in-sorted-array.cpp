@@ -4,13 +4,11 @@ public:
         int st=0, end=nums.size() - 1;
         int starting = -1;
         int ending = -1;
-        bool found = false;
         while(st<=end){
             int mid = st + (end - st)/2;
 
             if(nums[mid] == target){
                 starting = mid;
-                found = true;
             }
 
             if(nums[mid] >= target){
@@ -20,7 +18,7 @@ public:
             }
         }
 
-        if(!found) return {-1,-1};
+        if(starting == -1 ) return {-1,-1};
 
         st = 0; end = nums.size() - 1;
 
