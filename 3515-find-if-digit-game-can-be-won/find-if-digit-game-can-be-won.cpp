@@ -12,17 +12,11 @@ public:
         }
 
         if(aliceTotal > bobTotal) return true;
-        aliceTotal = 0, bobTotal = 0;
 
-        for(int i=0; i<nums.size(); i++){
-            if(nums[i] < 10){
-                bobTotal += nums[i];
-            }else{
-                aliceTotal += nums[i];
-            }
-        }
-
+        swap(aliceTotal, bobTotal);
+        
         if(aliceTotal > bobTotal) return true;
+        
 
         return false;
     }
