@@ -13,10 +13,8 @@ public:
         for(int i=0; i<nums.size(); i++){
             m[nums[i]]--;
             int outlierPossible = totalSum - (2*nums[i]);
-            if(m.find(outlierPossible) != m.end()){
-                if(m[outlierPossible] != 0){
-                    ans = max(ans, outlierPossible);
-                }
+            if(m[outlierPossible] > 0){
+                ans = max(ans, outlierPossible);
             }
             m[nums[i]]++;
         }
