@@ -2,12 +2,12 @@ class Solution {
 public:
 
     void validCombination(vector<vector<int>>&allValidCombinations, vector<int>currCombination, vector<int>candidates, int i, int target, int&sum){
-        if(i==candidates.size()){
-            return;
-        }else if(sum >= target){
+        if(sum >= target){
             if(sum == target){
                 allValidCombinations.push_back({currCombination});
             }
+            return;
+        }else if(i==candidates.size()){
             return;
         }
 
