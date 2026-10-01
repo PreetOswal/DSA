@@ -70,8 +70,7 @@ public:
         }
         board[row][col] = digit;
         return validityChecker(board, nextRow, nextCol);
-
-        return false;
+        
     }
 
     bool isValidSudoku(vector<vector<char>>& board) {
